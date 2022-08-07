@@ -18,9 +18,8 @@ console.log(userNumber1.name + ', ' + age)
 console.log(typeof(age))
 //using a specific method generate in the code
 userNumber1.talk("Bogotá")
-
 //Lets code the behavior of the prototype with a specific property of the object
 Person.prototype.diet = "Omnivore"
-console.log(userNumber1.diet)
+console.log("this is the inherit diet of the user from the prototype object ==> " + userNumber1.diet)
 userNumber1.diet = "Vegan"
 console.log(userNumber1.diet)

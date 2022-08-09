@@ -63,9 +63,19 @@ Person.prototype[humanSymbol] = "Human"
 console.log(userNumber1[humanSymbol])
 
 
-//using the symbols to define properties which could be used in parallel with others properties
+//using the symbols to define properties which could be used in parallel with others properties on this case I will use the toString method as a in built method and customize toString method using the symbols
+
+
 const symbolToString = Symbol("toString");
 Array.prototype[symbolToString] = function() {
   return `${this.length} cm of blue thread`;
 };
+let stringObject = {
+    [symbolToString]() { return "a hemp string"; }
+};
+console.log([1,2,3].toString())
+console.log([1,2,3][symbolToString]())
+console.log(stringObject[symbolToString]())
 
+
+//The interface of an iterator

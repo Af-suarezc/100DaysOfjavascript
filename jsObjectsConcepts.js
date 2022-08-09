@@ -79,3 +79,117 @@ console.log(stringObject[symbolToString]())
 
 
 //The interface of an iterator
+
+
+//The iterator interface
+let okIterator ="OK"[Symbol.iterator]();
+console.log(okIterator.next())
+console.log(okIterator.next())
+console.log(okIterator.next())
+
+//implementing an iterable data structure. A matrix class acing as
+//two dimensional array.
+
+class Matrix{
+    constructor(width, height, element =(x,y)=>undefined){
+        this.width=width;
+        this.height = height;
+        this.content = [];
+        for(let y=0; y<height;y++){
+            for(let x=0; x<width; x++){
+                this.content[y*width + x]=element(x,y);
+            }
+        }
+    }
+    get(x,y){
+        return this.content[y*this.width+x];
+    }
+    set(x,y,value){
+        this.content[y*this.width+x] = value;
+    }    
+}
+
+
+class MatrixIterator{
+    constructor(matrix){
+        this.x = 0;
+        this.y =0;
+        this.matrix = matrix;
+    }
+    next(){
+        if(this.y ==this.matrix.height) return {done: true}
+        let value = {x:this.x, y:this.y, value: this.matrix.get(this.x,this.y)};
+        this.x++;
+        if(this.x ==this.matrix.width){
+            this.x = 0;
+            this.y++;
+        }
+        return{value,done:false}
+    }
+}
+
+
+Matrix.prototype[Symbol.iterator] = function() {
+    return new MatrixIterator(this);
+};
+
+let matrix = new Matrix(2, 2, (x, y) => `value ${x},${y}`);
+console.log(matrix)
+
+for (let {x, y, value} of matrix) {
+  console.log(x, y, value);
+}
+
+//Getters, setters, and statics
+let varyingSize = {
+    get size() {
+      return Math.floor(Math.random() * 100);
+    }
+};
+
+class Temperature {
+    constructor(celsius) {
+      this.celsius = celsius;
+    }
+    get fahrenheit() {
+      return this.celsius * 1.8 + 32;
+    }
+    set fahrenheit(value) {
+      this.celsius = (value - 32) / 1.8;
+    }
+  
+    static fromFahrenheit(value) {
+      return new Temperature((value - 32) / 1.8);
+    }
+}
+  
+let temp = new Temperature(22);
+console.log(temp.fahrenheit);
+
+//inheritance
+class SymmetricMatrix extends Matrix{
+    constructor(size, element=(x,y)=>undefined){
+        super(size, size,(x,y)=>{
+            if(x<y) return element(y,x);
+            else return element(x,y);
+        });
+    }
+    set(x,y,value){
+        super.set(x,y,value);
+        if(x != y){
+            super.set(y,x,value);
+        }
+    }
+}
+
+let matrixS = new SymmetricMatrix(5, (x,y)=>`${x}, ${y}`)
+console.log(matrixS)
+
+//The instance of Operator
+// It is occasionally useful to know whether an object was derived from a specific class. For this, JavaScript provides a binary operator called instanceof.
+
+console.log(new SymmetricMatrix(2) instanceof SymmetricMatrix)
+console.log(new SymmetricMatrix(2) instanceof Matrix)
+console.log(new Matrix(2,2) instanceof SymmetricMatrix)
+console.log([1] instanceof Array)
+

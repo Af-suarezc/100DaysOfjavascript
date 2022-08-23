@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript HTML DOM</h2>
+    <div id="main-node">
+        <p>Finding HTML Elements by Tag Name</p>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+
+    <p id="demoP"></p>
+
+    <p>Finding HTML Elements by Query Selector</p>
+    <p class="intro">Hello World!.</p>
+    <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+    <p id="demo1"></p>
+
+    <br>
+    <p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+    <form id="frm1" action="/action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <p>These are the values of each element in the form:</p>
+
+    <p id="demo"></p>
+
+
+    <script>
+        const x = document.getElementById("main-node");
+        //when I get the elements by tag names in a node with childs, I get an array in the y const, later i can access to their
+        //items as a JS-ARRAY
+        const y = x.getElementsByTagName("p"); 
+
+        document.getElementById("demoP").innerHTML = 'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+        const x1 = document.querySelectorAll("p.intro");
+        document.getElementById("demo1").innerHTML = 'The first paragraph (index 0) with class="intro" is: ' + x1[0].innerHTML;
+
+        //working with a form nice! :)
+        const x2 = document.forms["frm1"];
+        let text = "";
+        for (let i = 0; i < x2.length ;i++) {
+            text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="c1"></div>
+    <br>
+    <h2>This is the new way of learning the DOM concepts</h2>
+    <p id="demo1"></p>
+    <h3>Time to get this element by his tag name</h3>
+    <p>Time to get this elements by the tag name on this case there will be to selected on the script</p>
+    <p
+    class="lorem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corrupti repudiandae similique quos. Totam, id inventore autem dolor enim eos incidunt accusamus omnis pariatur vel eveniet, minima iure deserunt adipisci.</p>
+    <br>
+    <div id="topDiv">
+        <p>This node use to be cool, but he lost all his UL nodeChilds :V</p>
+        <ul id="nestedUlToDiv">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+            <li><a>Link 3</a></li>        
+        </ul>
+    </div>
+    <br>
+    <div id="newTopDiv">
+        <p>The parent of this node got news childs, so this node got some broNodes :V</p>
+    </div>
+    <br id='final-break'>
+    
+
+    <script>
+        
+        let title = document.createElement("h3").innerHTML="This should be the real title of the document"
+        //time to modify the dom here in the Script :)
+        let topDiv = document.getElementById("topDiv");
+        let superiorDiv = document.getElementById("c1")
+        let nestedUlToDiv = document.getElementById("nestedUlToDiv");
+        topDiv.removeChild(nestedUlToDiv);
+        let newTopDiv = document.getElementById("newTopDiv")
+        newTopDiv.appendChild(nestedUlToDiv)
+        superiorDiv.append(title)
+
+        //here I create an element, then set the attributes of the element and finally I add it to the DOM tree as child of the newTopDiv node Id :)
+        let img1 = document.createElement('img')
+        img1.setAttribute('src', 'https://images.pexels.com/photos/11035481/pexels-photo-11035481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+        document.getElementById('newTopDiv').appendChild(img1)
+        
+
+
+    </script>
+    
+</body>
+</html>

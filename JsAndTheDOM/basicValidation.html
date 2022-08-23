@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Basic Validation</title>
+    </head>
+    <body>
+        <h2 id="test-color">JavaScript Validation</h2>
+        <p>Please input a number between 1 and 10:</p>
+        <input id="numb">
+        <button type="button" onclick="myFunction()">Submit</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction(){
+                let x = document.getElementById("numb").value;
+                let message;
+                if(isNaN(x) || x < 1 || x >10){
+                    message="number not allowed"
+                }else{
+                    message="A nice number thanks"
+                }
+                document.getElementById('demo').innerHTML=message;
+                //a little bit of change of h2-CSS from the Script :)
+                document.getElementById('test-color').style.color ="blue";   
+            }
+        </script>
+    </body>
+</html>

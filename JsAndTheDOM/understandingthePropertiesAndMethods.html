@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>understanding the DOM</title>
+</head>
+<body>
+    <h2>This is the new way of learning the DOM concepts</h2>
+    <p id="demo1"></p>
+    <h3>Time to get this element by his tag name</h3>
+    <p>Time to get this elements by the tag name on this case there will be to selected on the script</p>
+    <p
+    class="lorem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corrupti repudiandae similique quos. Totam, id inventore autem dolor enim eos incidunt accusamus omnis pariatur vel eveniet, minima iure deserunt adipisci.</p>
+    <script>
+        document.getElementById("demo1").innerHTML="Hello world!";
+        const elementById = document.getElementById("demo1");
+        const elementByClass = document.getElementsByClassName("lorem1");
+        const elementsByTags = document.getElementsByTagName("p")
+        console.log(elementById)
+        console.log(elementByClass)
+        console.log(elementsByTags)
+    </script>
+    <!-- the recurrent method to get an  HTML element is to use the id of the method -->
+    <!-- the easier way to get the content of an element is by using innerHTML property -->
+</body>
+</html>

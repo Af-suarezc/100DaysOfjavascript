@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+#main-heading{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin: 50px 10px 50px 10px;
+    color: rgb(54, 3, 3);
+    border: solid 5px rgb(59, 10, 10);
+    border-radius: 2%;
+}
+
+#container{
+    display: flex;
+    height: 400px;
+    justify-content: space-between;
+    border: dotted rgb(7, 132, 241) 3px;
+    margin: 0px 10px 50px 10px;
+
+}
+
+.boxes{
+    border: solid 5px rgb(3, 3, 3);
+    border-radius: 20px;
+    background-color: rgb(183, 169, 231);
+    margin: 2% 0%;
+    height: 90%;
+    width: 32%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px 10px 10px 10px;
+    padding: 50px;
+    color: rgb(49, 7, 7);
+    
+}
+
+
+
+#btn-1{
+    display: block;
+    font-size: 15px;
+    background: none;
+    border: solid 2px rgb(44, 1, 1);
+    color: rgb(8, 8, 8);
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-top: 100px;
+}
+#btn-1:hover{
+    background-color: rgb(88, 88, 88);
+}
+
+#btn-2{
+    display: block;
+    font-size: 15px;
+    background: none;
+    border: solid 2px rgb(44, 1, 1);
+    color: rgb(8, 8, 8);
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-top: 100px;
+}
+#btn-2:hover{
+    background-color: rgb(70, 69, 68);
+}
+#btn-3{
+    display: block;
+    font-size: 15px;
+    background: none;
+    border: solid 2px rgb(44, 1, 1);
+    color: rgb(8, 8, 8);
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-top: 100px;
+}
+#btn-3:hover{
+    background-color: rgb(70, 69, 68);
+}

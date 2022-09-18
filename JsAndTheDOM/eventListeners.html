@@ -7,6 +7,56 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2 id="test-color">JavaScript EventListener</h2><br>
+    <p>Please input your weigth in kg</p><br>
+    <input id="wnumb"><br>
+    <p>Please input your heigth in meters</p><br>
+    <input id="mnumb"><br>
+    <br><button type="button" onclick="funcCMI()">getYourCMI</button><br>
+    <br><button type="button" onclick="funcClear()">re-Start</button><br>
+
+    <p id="demo"></p>
+    <br><div id="imgDiv"></div><br>
+    <script>
+        function funcCMI(){
+            let x = document.getElementById("wnumb").value;
+            let y = document.getElementById("mnumb").value;
+            let imgSrc = document.getElementById("imgDiv");
+            let message;
+            let imc = x/y**2;
+            let imcR = Math.round(imc)
+            console.log(imcR)
+            if(isNaN(imcR)){
+                message ="Oh no, type a correct value"
+                let img1 = document.createElement('img')
+                img1.setAttribute('src',"https://images.pexels.com/photos/823301/pexels-photo-823301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+                document.getElementById('imgDiv').appendChild(img1)
+            }else if(16 < imcR && imcR<=25){
+                let img1 = document.createElement('img')
+                img1.setAttribute('src',"https://images.pexels.com/photos/5898233/pexels-photo-5898233.jpeg?auto=compress&cs=tinysrgb&w=600")
+                document.getElementById('imgDiv').appendChild(img1)
+                message="nice CMI"
+                
+            }else{
+                message="F... CMI, take care please go to your doctor ASAP"
+                let img1 = document.createElement('img')
+                img1.setAttribute('src',"https://media.makeameme.org/created/foda-se-ee091aa169.jpg")
+                document.getElementById('imgDiv').appendChild(img1)
+            }
+            document.getElementById('demo').innerHTML=message;
+            document.getElementById('test-color').style.color ="blue"; 
+        }
+        function funcClear(){
+            let par = document.getElementById('demo');
+            par.innerText="You have restarted the CMI, type the data again to get your results";
+            let img = document.querySelector('img');
+            let imgDiv= document.getElementById('imgDiv');
+            imgDiv.removeChild(img)
+            let x = document.getElementById("wnumb");
+            let y = document.getElementById("mnumb");
+            y.value=null;
+            x.value=null;
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button id="alert-button">Alert</button>
+    <button id="change-color">change-The-Color</button>
+    <p id="demo"></p>
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+    <script>
+        let alertButton = document.getElementById('alert-button');
+        alertButton.addEventListener("click", function(){alert("Hello world, this an alert generate by the dom")});
+        let colorButton = document.getElementById('change-color')
+        function ramdon(number){
+            return Math.floor(Math.random()*(number+1))
+
+        }
+        function changeBkgColor() {
+            const rndColor= `rgb(${ramdon(255)}, ${ramdon(255)}, ${ramdon(255)})`;
+            document.body.style.backgroundColor=rndColor;
+        }
+        document.getElementById("demo").innerHTML = document.body.innerHTML;
+        let lastSon = document.body.lastChild;
+        console.log(lastSon )
+        colorButton.addEventListener('click', changeBkgColor)
+        //we can also get the node types, the most importants node are 1, 2 ,3, 8, 9, 10. 
+        //where element are node type 1, in example here the console return 1.
+        console.log(document.getElementById('alert-button').nodeType)
+
+        const para = document.createElement("p");
+        const node = document.createTextNode("This is new.");
+        para.appendChild(node);
+
+        const element = document.getElementById("div1");
+        const child = document.getElementById("p1");
+        element.insertBefore(para, child);
+    </script>
+</body>
+</html>

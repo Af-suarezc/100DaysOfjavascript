@@ -13,18 +13,17 @@
         <button type="button" onclick="myFunction()">Submit</button>
         <p id="demo"></p>
         <script>
-            function myFunction(){
-                let x = document.getElementById("numb").value;
+           function myFunction(){
+                let x = document.getElementById('numb').value;
                 let message;
-                if(isNaN(x) || x < 1 || x >10){
-                    message="number not allowed"
+                if(x<0 || x >10){
+                    message = "Wrong number, it's just between 0 and 10"
+                    document.getElementById('demo').innerHTML=message;
                 }else{
-                    message="A nice number thanks"
+                    message="Nice number dear user"
+                    document.getElementById('demo').innerHTML=message;
                 }
-                document.getElementById('demo').innerHTML=message;
-                //a little bit of change of h2-CSS from the Script :)
-                document.getElementById('test-color').style.color ="blue";   
-            }
+           }
         </script>
     </body>
 </html>

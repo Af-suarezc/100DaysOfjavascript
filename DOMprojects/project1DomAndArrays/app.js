@@ -23,7 +23,7 @@ async function getRandomUsers(){
 //add new user object to data array
 function addData(obj){
     data.push(obj)
-    upDateDom();
+    upDateDom(data);
 }
 
 //update the DOM

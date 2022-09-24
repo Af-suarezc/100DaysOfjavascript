@@ -18,6 +18,7 @@ function gettingTheData(){
         // li.appendChild(email);
         // list.appendChild(li);
         // ul.appendChild(list);
+        //getting more users
         authors.map(function(author){
             let li = document.createElement('li');
             let name = document.createElement('h2');

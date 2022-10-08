@@ -4,11 +4,12 @@ export default class Exam{
     questionsIndex =0
     score =0
     /**
-     * 
      * @param {Question[]} questions 
+     *  @param {Question} answer 
      */
-    constructor(questions){
-        this.questions=questions
+    constructor(questions,answer){
+        this.questions=questions;
+        this.answer=answer;
     }
     getQuestionIndex(){
         return this.questions[this.questionsIndex]

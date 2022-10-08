@@ -1,5 +1,5 @@
 async function questionsData(){
-    const response = await fetch('https://the-trivia-api.com/api/questions?limit=10')
+    const response = await fetch('https://the-trivia-api.com/api/questions?limit=5')
     const data1 = await response.json();
     return data1
 }

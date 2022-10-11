@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+    <%- include('partials/head')%>
+</head>
+
+<body>
+    <%- include('partials/navigation')%>
+        <section class="container  vh-100 d-flex justify-content-center  align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png?20170401104355"
+                    alt="This is a pic" class="w-25">
+                <h1 class="display-1 my-5 text-uppercase fw-bold">Interacting with node</h1>
+                <a href="/about" class="btn btn-primary w-25">About</a>
+            </div>
+        </section>
+    <%- include('partials/footer')%>
+</body>
+
+</html>

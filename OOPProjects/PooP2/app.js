@@ -1,5 +1,5 @@
 import questionObj from "./data/questions.js";
-import Exam from "./models/Exam.js"
+import Exam from "./models/Exam.js";
 import {UI}from"./models/UI.js";
 /**
  * 

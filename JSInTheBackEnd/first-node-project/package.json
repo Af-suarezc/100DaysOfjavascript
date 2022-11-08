@@ -1,0 +1,19 @@
+{
+  "name": "firstproject",
+  "version": "0.0.1",
+  "description": "first npm project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js # este es un script personalizado de node",
+    "dev": "nodemon src/index.js #nodemon dev dependencie starter"
+  },
+  "keywords": [
+    "first",
+    "project"
+  ],
+  "author": "afsuarez",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
